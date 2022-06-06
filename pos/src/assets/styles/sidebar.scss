@@ -1,0 +1,111 @@
+#app {
+  .main-container {
+    min-height: 100%;
+    transition: margin-left 0.28s;
+    margin-left: var(--base-sidebar-width);
+    position: relative;
+  }
+
+  // 展开sidebar状态设置svg-icon边距
+  .openSidebar .layout-sidebar__container .svg-icon {
+    margin-right: 10px;
+  }
+  .hideSidebar {
+    .layout-sidebar__container {
+      width: 54px !important;
+    }
+
+    .main-container {
+      margin-left: 54px;
+    }
+
+    .submenu-title-noDropdown {
+      padding: 0 !important;
+      position: relative;
+
+      .el-tooltip {
+        padding: 0 !important;
+      }
+    }
+
+    .el-sub-menu {
+      overflow: hidden;
+
+      & > .el-sub-menu__title {
+        .el-sub-menu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+    // 折叠状态下
+    .el-menu--collapse {
+      [class^='el-icon'] {
+        width: auto;
+        font-size: medium;
+        margin-right: 0;
+      }
+      .el-sub-menu {
+        & > .el-sub-menu__title {
+          & > span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  .el-menu--collapse .el-menu .el-sub-menu {
+    min-width: var(--base-sidebar-width);
+  }
+
+  // mobile responsive
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+
+    .layout-sidebar__container {
+      transition: transform 0.28s;
+      width: var(--base-sidebar-width) !important;
+    }
+
+    &.hideSidebar {
+      .layout-sidebar__container {
+        display: none;
+      }
+    }
+  }
+
+  // .withoutAnimation {
+  //   .main-container,
+  //   .layout-sidebar__container {
+  //     transition: none;
+  //   }
+  // }
+}
+
+// when menu collapsed
+.el-menu--vertical {
+  // the scroll bar appears when the subMenu is too long
+  > .el-menu--popup {
+    max-height: 100vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar-track-piece {
+      background: #d3dce6;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #99a9bf;
+      border-radius: 20px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+// base color
+$blue: #324157;
+$light-blue: #3a71a8;
+$red: #c03639;
+$pink: #e65d6e;
+$green: #30b08f;
+$tiffany: #4ab7bd;
+$yellow: #fec171;
+$panGreen: #30b08f;
+
+// 默认菜单主题风格
+:root {
+  --base-menu-color: #bfcbd9;
+  --base-menu-color-active: #f4f4f5;
+  --base-menu-background: #ffffff;
+  --base-logo-title-color: #ffffff;
+  --base-topBar-background: #ffffff;
+	--base-topBar-color: #5a5e66;
+  --base-sidebar-width: 210px;
+
+  --base-tags-bg-border: #d8dce5;
+}
+/***默认主题颜色配置***/
+[data-theme='theme-light'] {
+  --base-menu-color: #bfcbd9;
+  --base-menu-color-active: #f4f4f5;
+  // 菜单背景
+  --base-menu-background: #ffffff;
+  // logo部分文字颜色
+  --base-logo-title-color: #001529;
+  // 顶部导航栏背景色
+  --base-topBar-background: #ffffff;
+
+}
+/***深色主题颜色配置***/
+[data-theme='theme-dark'] {
+  --base-menu-color: #bfcbd9;
+  --base-menu-color-active: #f4f4f5;
+  --base-menu-background: #304156;
+  --base-logo-title-color: #ffffff;
+  --base-topBar-background: #ffffff;
+
+  // el-ement ui 设置
+  --el-fill-color-blank: #304156;
+  --el-text-color-primary: #bfcbd9;
+}
